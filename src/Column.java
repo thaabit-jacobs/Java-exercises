@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
-public class Row {
+public class Column {
 
     public static boolean inRange(int userInput){
-        return userInput > -6 && userInput < 93;
+        return userInput > -6 && userInput < 2;
     }
-
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -17,13 +16,12 @@ public class Row {
 
         if (inRange(userInput)){
             String formatInfo = "%2.2s";
-
             String output = "";
-            for (int i = 0; i < 7; i++){
-                output += userInput + i + " ";
-            }
 
-            System.out.format(formatInfo,output.substring(0, output.length() -1));
+            for (int i = userInput; i < 41+userInput; i+=7) {
+                System.out.format(formatInfo,i);
+                System.out.println();
+            }
 
             return;
         }
